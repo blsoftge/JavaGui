@@ -10,6 +10,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -58,6 +59,13 @@ public class Principal extends JFrame {
         txtPesoCliente = new JTextField();
         txtPesoCliente.setPreferredSize(new Dimension(100,25));
         
+        JLabel labelProdutos = new JLabel("Selecione abaixo a categoria de produtos"
+                + "que voce tem interesse:");
+        
+        JCheckBox chkLivros = new JCheckBox("Livros");
+        JCheckBox chkCozinha = new JCheckBox("Cozinha");
+        JCheckBox chkEletronicos = new JCheckBox("Eletronicos");
+        
         botaoSalvarCliente = new JButton("Salvar");
 
         botaoSalvarCliente.addActionListener(new ActionListener() {
@@ -75,6 +83,10 @@ public class Principal extends JFrame {
                         + "\n Idade: " + idade
                         + "\n Peso: " + peso
                         + "\n Escolaridade: " + escolaridadeSelecionada
+                        + "\n\n PRODUTOS DE INTERESSE:"
+                        + "\nLivros: " + (chkLivros.isSelected() ? "Sim" : "Não")
+                        + "\nCozinha: " + (chkCozinha.isSelected() ? "Sim" : "Não")
+                        + "\nEletronico: " + (chkEletronicos.isSelected() ? "Sim" : "Não")
                 );
                 JOptionPane.showMessageDialog(null, "Cliente salvo com sucesso!");
             }
@@ -91,6 +103,12 @@ public class Principal extends JFrame {
         
         this.add(lablePesoCliente);
         this.add(txtPesoCliente);
+        
+        this.add(labelProdutos);
+        
+        this.add(chkLivros);
+        this.add(chkCozinha);
+        this.add(chkEletronicos);
         
         this.add(botaoSalvarCliente);
 
