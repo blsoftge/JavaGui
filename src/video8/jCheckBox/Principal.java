@@ -30,7 +30,7 @@ public class Principal extends JFrame {
     private final JTextField txtNomeCliente;
     private final JTextField txtIdadeCliente;
     private final JTextField txtPesoCliente;
-    private final JComboBox jcbEscolaridadeCliente;
+    private final JComboBox<String> jcbEscolaridadeCliente;
     
     private final JButton botaoSalvarCliente;
 
@@ -48,7 +48,7 @@ public class Principal extends JFrame {
         txtNomeCliente.setPreferredSize(new Dimension(500, 25));
         
         String[] escolaridades = {"..Escolaridade..","Graduação", "Ensino médio", "Ensino Fundamental"};
-        jcbEscolaridadeCliente = new JComboBox(escolaridades);
+        jcbEscolaridadeCliente = new JComboBox<String>(escolaridades);
          jcbEscolaridadeCliente.setEditable(true);
         
         lableIdadeCliente = new JLabel("Idade:");

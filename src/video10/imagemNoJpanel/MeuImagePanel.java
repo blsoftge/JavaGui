@@ -31,5 +31,4 @@ public class MeuImagePanel extends JPanel{
             System.err.println("Imagem não encontrada!");
         }
     }
-    
 }
